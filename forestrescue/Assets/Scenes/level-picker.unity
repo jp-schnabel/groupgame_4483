@@ -11343,7 +11343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogLines:
   - 'n: Cameron'
-  - How you doing pal
+  - How you doing pal. Click to continue
   - 'n: Bandit'
   - Doing good g
   - Go to the house and press space to enter a level ;)
