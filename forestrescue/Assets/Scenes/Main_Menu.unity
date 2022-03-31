@@ -1115,7 +1115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startScene: Level1-1
-  continueScene: Level Select
+  continueScene: level-select
   continueButton: {fileID: 2097268230}
 --- !u!1 &1894363397
 GameObject:

@@ -9777,6 +9777,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level Pack
       objectReference: {fileID: 0}
+    - target: {fileID: 4805616056571378901, guid: 8e86861e3991a71468f69b500c430b2d,
+        type: 3}
+      propertyPath: levelToLoad
+      value: level-picker
+      objectReference: {fileID: 0}
     - target: {fileID: 4805616056700490933, guid: 8e86861e3991a71468f69b500c430b2d,
         type: 3}
       propertyPath: m_LocalPosition.x

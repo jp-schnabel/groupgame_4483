@@ -7,7 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static PauseMenu instance;
     public string mainMenu;
-    public string levelSelect = "Level Select";
+    public string levelSelect = "level-select";
 
     public GameObject pauseScreen;
     public bool isPaused;
@@ -52,7 +52,7 @@ public class PauseMenu : MonoBehaviour
         PlayerPrefs.SetString("CurrentLevel", SceneManager.GetActiveScene().name);
 
         Debug.Log(levelSelect);
-        SceneManager.LoadScene(levelSelect);
+        SceneManager.LoadScene("level-picker");
         Time.timeScale = 1f;
     }
 

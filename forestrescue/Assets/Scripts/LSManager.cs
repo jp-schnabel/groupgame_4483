@@ -18,7 +18,7 @@ public class LSManager : MonoBehaviour
         {
             foreach(MapPoint point in allPoints)
             {
-                if(point.levelToLoad == PlayerPrefs.GetString("CurrentLevel"))
+                if (point.levelToLoad == PlayerPrefs.GetString("CurrentLevel"))
                 {
                     thePlayer.transform.position = point.transform.position;
                     thePlayer.currentPoint = point;

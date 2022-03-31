@@ -12,14 +12,83 @@ public class LSPlayer : MonoBehaviour
 
     public LSManager theManager;
 
+// new stuff
+    public Rigidbody2D rigidBody;
+    public float speed;
+
+    // ensure player cannot go outside the map
+    private Vector3 bottomLeftLimit;
+    private Vector3 topRightLimit;
+
+    public static LSPlayer singleton;
+
+    public bool dialogOpen = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        if (singleton == null)
+        {
+            singleton = this;
+        }
+        else
+        {
+            if (singleton != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        dialogOpen = false;
+    }
+
+    void Update()
+    {
+
+
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
+
+       
+        rigidBody.velocity = new Vector2(moveX, moveY) * speed;
+
+
+        if (dialogOpen)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+        }
+
+        if (currentPoint.isLevel && currentPoint.levelToLoad != "" && !currentPoint.isLocked)
+        {
+            LSUIController.instance.ShowInfo(currentPoint);
+
+            if (Input.GetButtonDown("Jump"))
+            {
+                levelLoading = true;
+
+                theManager.LoadLevel();
+            }
+        }
+
+        //transform.position = new Vector3(
+        //Mathf.Clamp(transform.position.x, bottomLeftLimit.x, topRightLimit.x),
+        //Mathf.Clamp(transform.position.y, bottomLeftLimit.y, topRightLimit.y),
+        //0);
+
+        //anim.SetFloat("moveSpeed", Mathf.Abs(theRB.velocity.x));
+
+    }
+
+    public void SetBoundaries(Vector3 bottomLeftLimit, Vector3 topRightLimit)
+    {
+        this.bottomLeftLimit = bottomLeftLimit + new Vector3(.5f, .5f, 0); // ensure that there's some padding...
+        this.topRightLimit = topRightLimit + new Vector3(-.5f, -.5f, 0);
+
     }
 
     // Update is called once per frame
-    void Update()
+    void OldUpdate()
     {
         transform.position = Vector3.MoveTowards(transform.position, currentPoint.transform.position, moveSpeed * Time.deltaTime);
 

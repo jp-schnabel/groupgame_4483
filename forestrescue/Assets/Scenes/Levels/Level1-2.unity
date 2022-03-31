@@ -410,7 +410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitToRespawn: 2
   gemsCollected: 0
-  levelToLoad: Level Select
+  levelToLoad: level-picker
   timeInLevel: 0
 --- !u!4 &98677208
 Transform:

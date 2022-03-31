@@ -38,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Victory_Screen.unity
     guid: d5ceb409119616a45ac6f987eec10559
+  - enabled: 1
+    path: Assets/Scenes/level-picker.unity
+    guid: f703aaebb43e54cdcbc79776b5b2a36f
   m_configObjects: {}
